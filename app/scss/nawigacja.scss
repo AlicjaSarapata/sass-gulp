@@ -1,0 +1,49 @@
+//laczenie pliku scss z drugim scss za pomoca @import 
+
+@import 'zmienne';
+@import 'mixins';
+
+#main-nav {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+    top: 0;
+    z-index: 1;
+    
+    ul {
+        text-align: right;
+        
+        
+        li {
+            display: inline-block;
+            
+            a {
+                color: $base-color;
+                transition: all 0.4s;
+                
+                &:hover {
+                    color: yellow;
+                }
+                &.red {
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+#main-header {
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+        
+        .centrowany {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            @include centrowanie;
+            @include borderowanie(50%);
+            }
+}
